@@ -1,0 +1,21 @@
+name: AI Action Firewall — Marketplace install test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  aaf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: AI Action Firewall (Marketplace v1)
+        uses: pinfloyd/ai-action-firewall@v1
+        with:
+          authority_url: ${{ secrets.AI_AUTHORITY_URL }}
+          authority_pubkey_sha256: ${{ secrets.AI_PUBKEY_SHA256 }}
