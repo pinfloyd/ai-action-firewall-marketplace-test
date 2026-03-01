@@ -16,6 +16,8 @@ jobs:
 
       - name: AI Action Firewall (Marketplace v1)
         uses: pinfloyd/ai-action-firewall@v1
+        env:
+          POLICY_ID: ${{ secrets.POLICY_ID }}
         with:
           authority_url: ${{ secrets.AI_AUTHORITY_URL }}
           authority_pubkey_sha256: ${{ secrets.AI_PUBKEY_SHA256 }}
